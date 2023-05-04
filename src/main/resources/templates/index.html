@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular días hasta el mes</title>
+</head>
+<body>
+    <h1>Calcular días hasta el mes</h1>
+    <form action="/days-until-month">
+        <div>
+            <label for="mes">Mes:</label>
+            <select id="mes" name="nombreMes">
+                <option th:each="mes : ${meses}" th:value="${mes}" th:text="${mes}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="anio">Año:</label>
+            <input type="number" id="anio" name="anio" required>
+        </div>
+        <button type="submit">Calcular</button>
+    </form>
+    <hr>
+    <h2>Resultado:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Días hasta el final del mes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${param.nombreMes}"></td>
+                <td th:text="${dias}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

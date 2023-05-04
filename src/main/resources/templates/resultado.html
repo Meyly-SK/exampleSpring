@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado - Calcular días hasta el mes</title>
+</head>
+<body>
+    <h1>Resultado - Calcular días hasta el mes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Días hasta el final del mes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${param.nombreMes}"></td>
+                <td th:text="${dias}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/">Calcular otro mes</a>
+</body>
+</html>
